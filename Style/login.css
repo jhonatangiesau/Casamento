@@ -1,0 +1,81 @@
+@import url(/Style/font.css);
+@import url(/Style/global.css);
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: #121212;
+  font-family: avant;
+}
+main {
+  width: 429px;
+  height: 926px;
+  margin: auto;
+}
+#home-img {
+  display: flex;
+  justify-items: center;
+}
+section {
+  width: 429px;
+  height: auto;
+}
+#spotify-logo {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+}
+
+h4 {
+  font-family: avant;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 21px;
+}
+
+h1 {
+  font-family: avant;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 6px;
+}
+button {
+  font-family: avant;
+  font-size: 16px;
+}
+#login-one {
+  display: block;
+  width: 337px;
+  height: 49px;
+  margin: 23px 46px 12px;
+  border-radius: 45px;
+  border-style: none;
+  background-color: var(--button-color);
+}
+#login-one:hover {
+  background-color: var(--button-houver-color);
+}
+
+#login-two {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: white;
+  width: 337px;
+  height: 49px;
+  margin: 23px 46px 12px;
+  border-radius: 45px;
+  border-color: white;
+}
+#text {
+  padding-left: 59px;
+}
+
+#google {
+  padding-left: 16px;
+}

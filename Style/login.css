@@ -4,8 +4,10 @@
 * {
   margin: 0px;
   box-sizing: border-box;
-  background-color: #121212;
   font-family: avant;
+}
+body {
+  background-color: #121212;
 }
 main {
   width: 429px;
@@ -45,15 +47,21 @@ h1 {
 button {
   font-family: avant;
   font-size: 16px;
+
+  .buttons {
+    color: inherit; /* Herdar a cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+  }
 }
 #login-one {
   display: block;
+  color: white;
   width: 337px;
   height: 49px;
   margin: 23px 46px 12px;
   border-radius: 45px;
-  border-style: none;
   background-color: var(--button-color);
+  outline: none;
 }
 #login-one:hover {
   background-color: var(--button-houver-color);
@@ -63,12 +71,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: start;
-  color: white;
   width: 337px;
   height: 49px;
   margin: 23px 46px 12px;
   border-radius: 45px;
+  color: white;
   border-color: white;
+  background-color: #121212;
 }
 #text {
   padding-left: 59px;

@@ -47,9 +47,13 @@ h4 {
 }
 
 h1 {
+  font: bold 28px;
+  padding: 0px 26px;
   color: white;
 }
 /*Player*/
+
+/*Config IMG*/
 #alianca {
   width: 365px;
   height: 297px;

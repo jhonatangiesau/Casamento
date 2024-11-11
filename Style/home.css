@@ -1,0 +1,35 @@
+/* Fontes e Variaveis*/
+@import url(/Style/font.css);
+@import url(/Style/global.css);
+
+/* Configurações Gerais*/
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: avant;
+}
+
+html,
+body {
+  min-width: 100vh;
+  background-image: linear-gradient(
+    #bfbf99 0%,
+    #726f5c 31%,
+    #222220 87%,
+    #191919 98%
+  );
+  background-color: #191919;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  width: 429px;
+  height: 926px;
+  margin: auto;
+}
+
+
+
+/*Player*/
+

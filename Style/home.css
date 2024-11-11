@@ -12,7 +12,7 @@
 html,
 body {
   min-width: 100vh;
-  background-image: linear-gradient(
+  background: linear-gradient(
     #bfbf99 0%,
     #726f5c 31%,
     #222220 87%,
@@ -29,7 +29,55 @@ main {
   margin: auto;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 21px 85px 21px;
+  padding-top: 54px;
+}
+h4 {
+  font-family: avant;
+  font: bold 14px;
+  color: white;
+}
+#capa {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 67px;
+}
 
-
+h1 {
+  color: white;
+}
 /*Player*/
+#alianca {
+  width: 365px;
+  height: 297px;
+  margin: auto;
+}
+#alianca img {
+  width: 365px;
+  height: 147;
+  margin: auto;
+}
 
+#local {
+  width: 365px;
+  height: 297px;
+  margin: auto;
+}
+#local img {
+  width: 365px;
+  height: 147;
+  margin: auto;
+}
+#dress-code {
+  width: 365px;
+  height: 297px;
+  margin: auto;
+}
+#dress-code img {
+  width: 365px;
+  height: 147;
+  margin: auto;
+}

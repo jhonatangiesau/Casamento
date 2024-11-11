@@ -45,11 +45,23 @@ h4 {
   justify-content: center;
   margin: 0px auto 67px;
 }
-
+#info {
+  margin: 0px 26px;
+}
 h1 {
-  font: bold 28px;
-  padding: 0px 26px;
+  font-size: 22px;
   color: white;
+}
+
+#artista {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+strong {
+  font-family: avant-regular;
+  font-size: 16px;
+  color: #b3b3b3;
 }
 /*Player*/
 

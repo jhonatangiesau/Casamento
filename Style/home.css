@@ -5,22 +5,22 @@
 /* Configurações Gerais*/
 * {
   margin: 0px;
+  padding: 0;
   box-sizing: border-box;
   font-family: avant;
 }
 
 html,
-body {
-  min-width: 100%;
-  background: linear-gradient(
+body main {
+  background-image: linear-gradient(
     #bfbf99 0%,
     #726f5c 31%,
     #222220 87%,
     #191919 98%
   );
+  background-size: contain;
+  background-repeat: repeat-x;
   background-color: #191919;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 main {

@@ -11,7 +11,7 @@
 
 html,
 body {
-  min-width: 100vh;
+  min-width: 100%;
   background: linear-gradient(
     #bfbf99 0%,
     #726f5c 31%,

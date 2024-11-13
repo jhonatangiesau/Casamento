@@ -64,6 +64,54 @@ strong {
   color: #b3b3b3;
 }
 /*Player*/
+.player {
+  width: 383px;
+
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin: 28px auto 39px;
+}
+
+.controls {
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos gerais */
+#playPauseButton {
+  background-color: transparent; /* Fundo transparente para o botão */
+  border: none; /* Remover borda */
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Certifique-se de que a imagem PNG não tenha fundo branco */
+#playPauseIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.progress-bar {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Remover o controle de volume */
+.volume-control {
+  display: none;
+}
+
+#volume {
+  display: none;
+}
 
 /*Config IMG*/
 #alianca {

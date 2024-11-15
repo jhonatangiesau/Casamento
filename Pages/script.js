@@ -6,20 +6,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentTimeDisplay = document.getElementById("current-time")
   const durationDisplay = document.getElementById("duration")
 
+  // Detectar sistema operacional
+  const isAndroid = /android/i.test(navigator.userAgent)
+  const isiPhone = /iphone|ipad|ipod/i.test(navigator.userAgent)
+
+  // Configurar autoplay apenas para Android
+  if (isAndroid) {
+    audio.play().catch((err) => {
+      console.warn("Erro ao tentar autoplay no Android:", err)
+    })
+    playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+  } else if (isiPhone) {
+    playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
+  }
+
   // Configurar estado inicial
-  let isPlaying = false
-  playPauseIcon.src = "/Style/assents/icons/player.png"
+  let isPlaying = isAndroid 
 
   // Alternar reprodução ao clicar no botão
   playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause()
-      playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
+      playPauseIcon.src = "/Style/assents/icons/player.png" 
     } else {
       audio.play().catch((err) => {
         console.error("Erro ao reproduzir áudio:", err)
       })
-      playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+      playPauseIcon.src = "/Style/assents/icons/pause.png"
     }
     isPlaying = !isPlaying
   })

@@ -245,11 +245,10 @@ h5 {
   grid-auto-flow: column;
   gap: 10px;
   scroll-behavior: auto;
-  overflow-x: auto;
+  overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  width: max-content; /* Garante que os itens do carrossel tenham largura suficiente */
 }
 
 .carrosel::-webkit-scrollbar {

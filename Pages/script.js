@@ -6,25 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentTimeDisplay = document.getElementById("current-time")
   const durationDisplay = document.getElementById("duration")
 
-  // Iniciar música automaticamente e configurar repetição
-  audio.play()
-  audio.loop = true
+  // Configurar estado inicial
+  let isPlaying = false
+  playPauseIcon.src = "/Style/assents/icons/player.png"
 
-  // Definir ícone de pause no início, pois o áudio já está tocando
-  playPauseIcon.src = "/Style/assents/icons/pause.png"
-
-  // Toggle play/pause ao clicar no botão e alterar o ícone
+  // Alternar reprodução ao clicar no botão
   playPauseButton.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play()
-      playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
-    } else {
+    if (isPlaying) {
       audio.pause()
       playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
+    } else {
+      audio.play().catch((err) => {
+        console.error("Erro ao reproduzir áudio:", err)
+      })
+      playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
     }
+    isPlaying = !isPlaying
   })
 
-  // Atualizar a barra de progresso e exibição de tempo
+  // Atualizar barra de progresso e tempo
   audio.addEventListener("timeupdate", () => {
     const progress = (audio.currentTime / audio.duration) * 100
     progressBar.value = progress
@@ -33,18 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.style.background = `linear-gradient(to right, #ffffff ${progress}%, #777777 ${progress}%)`
   })
 
-  // Exibir a duração do áudio quando os metadados são carregados
+  // Exibir duração quando metadados são carregados
   audio.addEventListener("loadedmetadata", () => {
     durationDisplay.textContent = formatTime(audio.duration)
   })
 
-  // Permitir busca no áudio ao mover a barra de progresso
+  // Permitir buscar no áudio
   progressBar.addEventListener("input", () => {
     const seekTime = (progressBar.value / 100) * audio.duration
     audio.currentTime = seekTime
   })
 
-  // Formatar o tempo em mm:ss
+  // Formatar tempo em mm:ss
   function formatTime(time) {
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)

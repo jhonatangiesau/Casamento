@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const isAndroid = /android/i.test(navigator.userAgent)
   const isiPhone = /iphone|ipad|ipod/i.test(navigator.userAgent)
 
-  // Inicializar estado de reprodução
+  // Estado inicial
   let isPlaying = false
 
   // Configurar ícone inicial
@@ -18,38 +18,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Autoplay no Android
   if (isAndroid) {
-    audio.play().catch((err) => {
-      console.warn("Erro ao tentar autoplay no Android:", err)
-    })
-    playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
-    isPlaying = true
+    audio
+      .play()
+      .then(() => {
+        playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+        isPlaying = true
+      })
+      .catch((err) => {
+        console.warn("Erro ao tentar autoplay no Android:", err)
+      })
   }
 
-  // Reproduzir/Pausar ao clicar no botão
+  // Clique no botão de reprodução/pausa
   playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause()
       playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
     } else {
-      audio.play().catch((err) => {
-        console.error("Erro ao tentar reproduzir áudio:", err)
-        alert(
-          "Não foi possível iniciar o áudio. Certifique-se de que o arquivo é compatível."
-        )
-      })
-      playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+      audio
+        .play()
+        .then(() => {
+          playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+        })
+        .catch((err) => {
+          console.error("Erro ao tentar reproduzir áudio:", err)
+          alert(
+            "Não foi possível iniciar o áudio. Certifique-se de que o arquivo é compatível e que o dispositivo suporta o formato."
+          )
+        })
     }
     isPlaying = !isPlaying
   })
 
   // Atualizar barra de progresso e tempo
   audio.addEventListener("timeupdate", () => {
-    const progress = (audio.currentTime / audio.duration) * 100
-    progressBar.value = progress
-    currentTimeDisplay.textContent = formatTime(audio.currentTime)
+    if (audio.duration) {
+      const progress = (audio.currentTime / audio.duration) * 100
+      progressBar.value = progress
+      currentTimeDisplay.textContent = formatTime(audio.currentTime)
 
-    // Atualizar a cor da barra de progresso
-    progressBar.style.background = `linear-gradient(to right, #ffffff ${progress}%, #777777 ${progress}%)`
+      // Atualizar cor da barra de progresso
+      progressBar.style.background = `linear-gradient(to right, #ffffff ${progress}%, #777777 ${progress}%)`
+    }
   })
 
   // Exibir duração quando metadados são carregados
@@ -57,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     durationDisplay.textContent = formatTime(audio.duration)
   })
 
-  // Permitir buscar no áudio
+  // Permitir busca no áudio
   progressBar.addEventListener("input", () => {
     const seekTime = (progressBar.value / 100) * audio.duration
     audio.currentTime = seekTime

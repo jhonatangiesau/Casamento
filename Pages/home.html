@@ -27,9 +27,9 @@
           src="/Style/assents/img/Screen Shot 2021-12-08 at 17.49 1.png"
           alt=""
         />
-        <h1>Golden hour / Piano Cover</h1>
+        <h1>Can't take my eyes off you</h1>
         <div id="artista">
-          <p><strong>JVKE</strong></p>
+          <p><strong>Joseph Vincent </strong></p>
           <img src="/Style/assents/icons/like.svg" alt="" />
         </div>
       </div>
@@ -38,7 +38,7 @@
       <div class="player">
         <audio
           id="audio"
-          src="/Pages/Music/JVKE - golden hour (Piano Cover by Riyandi Kusuma).mp3"
+          src="/Pages/Music/joseph vincent - can't take my eyes off you [legendado].mp3"
         ></audio>
         <!-- Controles-->
         <div class="controls">
@@ -54,16 +54,20 @@
           <!-- Timer-->
           <div class="time">
             <span id="current-time">0:00</span>
-            <span id="duration">0:00</span>
+            <span id="duration">2:40</span>
           </div>
-          <!-- Back-->
-          <img id="back" src="/Style/assents/icons/voltar.svg" alt="" />
-          <!-- Play & Pause-->
-          <button id="playPauseButton">
-            <img id="playPauseIcon" src="/path/to/play.png" alt="Play Icon" />
-          </button>
-          <!-- Next-->
-          <img id="next" src="/Style/assents/icons/seguir.svg" alt="" />
+          <!-- CONTROLES-->
+          <div id="controls">
+            <img id="back" src="/Style/assents/icons/aleatorio.svg" alt="" />
+            <img id="back" src="/Style/assents/icons/voltar.svg" alt="" />
+            <!-- Play & Pause-->
+            <button id="playPauseButton">
+              <img id="playPauseIcon" src="/path/to/play.png" alt="Play Icon" />
+            </button>
+            <!-- Play & Pause FINAL-->
+            <img id="next" src="/Style/assents/icons/seguir.svg" alt="" />
+            <img id="back" src="/Style/assents/icons/Component 3.svg" alt="" />
+          </div>
         </div>
 
         <div class="volume-control">
@@ -82,7 +86,7 @@
       <!-- Invite-->
       <div id="invite">
         <h2>Convite de Casamento</h2>
-        <p>
+        <p class="invite">
           É com imensa alegria que convidamos você para testemunhar e celebrar o
           amor que nos une.
           <br />
@@ -92,17 +96,18 @@
       </div>
 
       <!-- Informações gerais -->
-      <!-- data e hora -->
+      <p class="teste">Saiba mais detalhes</p>
       <div id="data" class="box">
-        <p>Saiba mais detalhes</p>
         <div id="alianca">
           <img
+            class="img-info"
             src="/Style/assents/img/FREEPIK-closeup-tiro-de-recem-casados-de-maos-dadas-e-mostrando-as-aliancas.jpg"
             alt=""
           />
-          <p>Informações</p>
-          <h2>Data e Hora</h2>
-          <p>
+          <p class="regular">Informações</p>
+          <!-- data e hora -->
+          <h3>Data e Hora</h3>
+          <p class="regular">
             O evento irá acontecer no dia 20 de abril de 2025, as 16: horas.
           </p>
         </div>
@@ -110,18 +115,20 @@
 
       <!-- Local do evento -->
       <div id="local" class="box">
-        <img src="/Style/assents/img/map.png" alt="" />
-        <p>Informações</p>
-        <h2>Data e Hora</h2>
-        <p>O evento irá acontecer no dia 20 de abril de 2025, as 16: horas.</p>
+        <img class="img-info" src="/Style/assents/img/map.png" alt="" />
+        <p class="regular">Informações</p>
+        <h3>Data e Hora</h3>
+        <p class="regular">
+          O evento irá acontecer no dia 20 de abril de 2025, as 16: horas.
+        </p>
       </div>
 
       <!-- Dress Code -->
       <div id="dress-code" class="box">
-        <img src="/Style/assents/img/dress code.jpg" alt="" />
-        <p>Duvida de como se vestir?</p>
-        <h2>Dress code</h2>
-        <p>
+        <img class="img-info" src="/Style/assents/img/dress code.jpg" alt="" />
+        <p class="regular">Duvida de como se vestir?</p>
+        <h3>Dress code</h3>
+        <p class="regular">
           Para celebrar em harmonia com a nossa decoração, pedimos que nossos
           convidados venham vestidos em casual elegante e cores em tons pastel,
           evitando tons de rosa e areia.
@@ -133,8 +140,8 @@
 
       <!-- Aviso -->
       <div id="aviso" class="box">
-        <h2>Importante</h2>
-        <p>
+        <h3>Importante</h3>
+        <p class="regular">
           Nosso casamento será uma celebração íntima e planejada com muito
           carinho para poucos convidados.
           <br />

@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const progress = (audio.currentTime / audio.duration) * 100
     progressBar.value = progress
     currentTimeDisplay.textContent = formatTime(audio.currentTime)
+
+    progressBar.style.background = `linear-gradient(to right, #ffffff ${progress}%, #777777 ${progress}%)`
   })
 
   // Exibir a duração do áudio quando os metadados são carregados

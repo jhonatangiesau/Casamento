@@ -7,7 +7,6 @@
   margin: 0px;
   padding: 0;
   box-sizing: border-box;
-  font-family: avant;
 }
 
 html,
@@ -21,6 +20,7 @@ body main {
   background-size: contain;
   background-repeat: repeat-x;
   background-color: #191919;
+  font-family: avant;
 }
 
 main {
@@ -66,7 +66,6 @@ strong {
 /*Player*/
 .player {
   width: 383px;
-
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -83,25 +82,51 @@ strong {
 /* Estilos gerais */
 #playPauseButton {
   background-color: transparent; /* Fundo transparente para o botão */
-  border: none; /* Remover borda */
+  border: none;
   padding: 0;
   cursor: pointer;
 }
 
-/* Certifique-se de que a imagem PNG não tenha fundo branco */
 #playPauseIcon {
   width: 50px;
   height: 50px;
 }
 
+/* Estilo da barra de progresso */
 .progress-bar {
   width: 100%;
-  margin: 10px 0;
+  height: 4px;
+  appearance: none;
+  background: #777777; /* Cor para o tempo restante */
+  border-radius: 2px;
+  cursor: url("/Style/assents/icons/cursor.png"), pointer, auto; /* Cursor branco personalizado */
+}
+
+/* Estilo da bolinha (thumb) no WebKit */
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px; /* Largura da bolinha */
+  height: 12px; /* Altura da bolinha */
+  background-color: #ffffff; /* Cor da bolinha */
+  border-radius: 50%;
+}
+
+/* Estilo da bolinha (thumb) no Firefox */
+.progress-bar::-moz-range-thumb {
+  width: 12px; /* Largura da bolinha */
+  height: 12px; /* Altura da bolinha */
+  background-color: #ffffff; /* Cor da bolinha */
+  border-radius: 50%;
+  cursor: url("/Style/assents/icons/cursor.png"), pointer; /* Cursor branco personalizado */
 }
 
 .time {
   display: flex;
   justify-content: space-between;
+  font-family: avan;
+  font-size: 10px;
+  font-style: normal;
+  color: #b2b2b2;
 }
 
 /* Remover o controle de volume */
@@ -112,36 +137,70 @@ strong {
 #volume {
   display: none;
 }
+/*CONTROLES*/
+#controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
 
+#invite {
+  margin: 70px auto 22px;
+  width: 371px;
+  height: 241px;
+  border-radius: 7px;
+  background-color: #f585a3;
+  color: white;
+}
+.teste {
+  margin-left: 26px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.box {
+  width: 365px;
+  height: 297px;
+  margin: 15px auto;
+  border-radius: 5px;
+  background-color: #272828;
+}
+
+h2 {
+  font-size: 22px;
+  padding: 22px 0px 12px 17px;
+}
+
+.invite {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 0px 28px 35px 17px;
+}
+h3 {
+  padding-left: 13px;
+  padding-bottom: 12px;
+  font-family: avan;
+  font-size: 28px;
+  color: white;
+}
+
+.regular {
+  font-family: avan;
+  font-size: 14px;
+  padding-left: 13px;
+  color: #939393;
+}
 /*Config IMG*/
 #alianca {
   width: 365px;
   height: 297px;
   margin: auto;
 }
-#alianca img {
+.img-info {
   width: 365px;
-  height: 147;
+  height: 147px;
   margin: auto;
+  margin-bottom: 22px;
 }
 
-#local {
-  width: 365px;
-  height: 297px;
-  margin: auto;
-}
-#local img {
-  width: 365px;
-  height: 147;
-  margin: auto;
-}
-#dress-code {
-  width: 365px;
-  height: 297px;
-  margin: auto;
-}
-#dress-code img {
-  width: 365px;
-  height: 147;
-  margin: auto;
-}
+

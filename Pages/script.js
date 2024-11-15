@@ -11,28 +11,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const isiPhone = /iphone|ipad|ipod/i.test(navigator.userAgent)
 
   // Configurar autoplay apenas para Android
+  let isPlaying = false // Estado inicial da reprodução
   if (isAndroid) {
-    audio.play().catch((err) => {
-      console.warn("Erro ao tentar autoplay no Android:", err)
-    })
-    playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+    audio
+      .play()
+      .then(() => {
+        isPlaying = true
+        playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+      })
+      .catch((err) => {
+        console.warn("Erro ao tentar autoplay no Android:", err)
+        playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
+      })
   } else if (isiPhone) {
     playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
   }
-
-  // Configurar estado inicial
-  let isPlaying = isAndroid 
 
   // Alternar reprodução ao clicar no botão
   playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause()
-      playPauseIcon.src = "/Style/assents/icons/player.png" 
+      playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
     } else {
-      audio.play().catch((err) => {
-        console.error("Erro ao reproduzir áudio:", err)
-      })
-      playPauseIcon.src = "/Style/assents/icons/pause.png"
+      audio
+        .play()
+        .then(() => {
+          playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
+        })
+        .catch((err) => {
+          console.error("Erro ao reproduzir áudio:", err)
+        })
     }
     isPlaying = !isPlaying
   })
@@ -43,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.value = progress
     currentTimeDisplay.textContent = formatTime(audio.currentTime)
 
+    // Atualizar a cor da barra de progresso
     progressBar.style.background = `linear-gradient(to right, #ffffff ${progress}%, #777777 ${progress}%)`
   })
 

@@ -223,6 +223,7 @@ h5 {
   padding-right: 13px;
   color: #939393;
 }
+
 /*Config IMG*/
 #alianca {
   width: 365px;
@@ -236,6 +237,25 @@ h5 {
   margin-bottom: 22px;
   border-radius: 5px;
 }
+#content {
+  margin-left: 26px;
+}
+.carrosel {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  scroll-behavior: auto;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  width: max-content; /* Garante que os itens do carrossel tenham largura suficiente */
+}
+
+.carrosel::-webkit-scrollbar {
+  display: none;
+}
+
 footer {
   height: 54px;
 }

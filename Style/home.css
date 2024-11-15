@@ -161,8 +161,24 @@ strong {
 .box {
   width: 365px;
   height: 297px;
-  margin: 15px auto;
+  margin: 20px auto;
   border-radius: 5px;
+  background-color: #272828;
+}
+.box-two {
+  width: 365px;
+  height: 389px;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: #272828;
+}
+
+.box-info {
+  width: 365px;
+  height: 230px;
+  margin: 20px auto 54px;
+  border-radius: 5px;
+
   background-color: #272828;
 }
 
@@ -177,8 +193,16 @@ h2 {
   padding: 0px 28px 35px 17px;
 }
 h3 {
-  padding-left: 13px;
-  padding-bottom: 12px;
+  padding: 5px 0px 12px 13px;
+
+  font-family: avan;
+  font-size: 28px;
+  color: white;
+}
+
+h5 {
+  padding: 22px 0px 12px 13px;
+
   font-family: avan;
   font-size: 28px;
   color: white;
@@ -188,6 +212,15 @@ h3 {
   font-family: avan;
   font-size: 14px;
   padding-left: 13px;
+  padding-right: 13px;
+  color: #939393;
+}
+
+.regular-two {
+  font-family: avan;
+  font-size: 14px;
+  padding-left: 13px;
+  padding-right: 13px;
   color: #939393;
 }
 /*Config IMG*/
@@ -201,4 +234,8 @@ h3 {
   height: 147px;
   margin: auto;
   margin-bottom: 22px;
+  border-radius: 5px;
+}
+footer {
+  height: 54px;
 }

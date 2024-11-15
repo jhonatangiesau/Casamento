@@ -255,6 +255,24 @@ h5 {
   display: none;
 }
 
+#final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  width: 365px;
+  height: 147px;
+  margin: auto;
+  font-family: avant;
+  background-color: #272828;
+  color: #fff;
+}
+
+h6 {
+  font-size: 17px;
+  padding: 13px;
+  text-align: center;
+}
 footer {
-  height: 54px;
+  height: auto;
 }

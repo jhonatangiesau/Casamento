@@ -10,29 +10,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const isAndroid = /android/i.test(navigator.userAgent)
   const isiPhone = /iphone|ipad|ipod/i.test(navigator.userAgent)
 
-  // Configurar autoplay apenas para Android
+  // Inicializar estado de reprodução
+  let isPlaying = false
+
+  // Configurar ícone inicial
+  playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
+
+  // Autoplay no Android
   if (isAndroid) {
     audio.play().catch((err) => {
       console.warn("Erro ao tentar autoplay no Android:", err)
     })
     playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
-  } else if (isiPhone) {
-    playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
+    isPlaying = true
   }
 
-  // Configurar estado inicial
-  let isPlaying = isAndroid
-
-  // Alternar reprodução ao clicar no botão
+  // Reproduzir/Pausar ao clicar no botão
   playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause()
-      playPauseIcon.src = "/Style/assents/icons/player.png"
+      playPauseIcon.src = "/Style/assents/icons/player.png" // Ícone de play
     } else {
       audio.play().catch((err) => {
-        console.error("Erro ao reproduzir áudio:", err)
+        console.error("Erro ao tentar reproduzir áudio:", err)
+        alert(
+          "Não foi possível iniciar o áudio. Certifique-se de que o arquivo é compatível."
+        )
       })
-      playPauseIcon.src = "/Style/assents/icons/pause.png"
+      playPauseIcon.src = "/Style/assents/icons/pause.png" // Ícone de pause
     }
     isPlaying = !isPlaying
   })
@@ -43,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.value = progress
     currentTimeDisplay.textContent = formatTime(audio.currentTime)
 
+    // Atualizar a cor da barra de progresso
     progressBar.style.background = `linear-gradient(to right, #ffffff ${progress}%, #777777 ${progress}%)`
   })
 
